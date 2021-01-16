@@ -53,3 +53,22 @@ const fizzBuzz = number => {
 };
 
 console.log(fizzBuzz(5));
+
+// Part One
+// function zipArrays(arr1, arr2) {}
+// I => zipArrays(['a','b','c'],[1,2,3])
+// O => {'a':1, 'b':2, 'c':3}
+
+var arr1=[1,2,3];
+
+var arr2=['a', 'b', 'c', 'd', 'e'];
+
+
+var myObj = {};
+
+for(var i=0; i<arr1; i++){
+    myObj[arr1[i]] = arr2[i]
+    console.log('myObj[arr[i]]', arr1)
+}
+
+console.log('myObj', myObj);
