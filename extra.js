@@ -72,3 +72,19 @@ for(var i=0; i<arr1; i++){
 }
 
 console.log('myObj', myObj);
+
+function NthLargest(arr, n){
+  var temp;
+  for(var i=0; i<n; i++){
+      for(var j=0; j<arr.length-1-i; j++){
+          if(arr[j] > arr[j+1]){
+              temp = arr[j];
+              arr[j] = arr[j+1];
+              arr[j+1] = temp;
+          }
+      }
+  }
+  return arr[arr.length-n];
+}
+
+console.log(NthLargest([5, 2, 7, 1, 4, 9], 3));
