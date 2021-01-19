@@ -88,3 +88,25 @@ function NthLargest(arr, n){
 }
 
 console.log(NthLargest([5, 2, 7, 1, 4, 9], 3));
+
+function changeChange(num){
+	var quarters = math.floor(num/25);
+	num %= 25;
+
+	var dimes = math.floor(num/10);
+	num %= 10;
+
+	var nickels = math.floor(num/5);
+	num %= 5;
+
+	var pennies = num;
+
+	var finChange = {
+		'q' : quarters,
+		'd' : dimes,
+        'n' : nickels,
+        'p' : pennies
+	}
+	return finChange;
+}
+changeChange(123);
