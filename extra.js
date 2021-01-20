@@ -110,3 +110,13 @@ function changeChange(num){
 	return finChange;
 }
 changeChange(123);
+
+function reverseString(oldString){
+  var newString = "";
+  for(var i=oldString.length - 1; i>= 0; i--){
+      newString = newString + oldString[i];
+  }
+  return newString;
+}
+
+console.log(reverseString("hello"));
