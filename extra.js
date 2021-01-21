@@ -120,3 +120,12 @@ function reverseString(oldString){
 }
 
 console.log(reverseString("hello"));
+
+function isPrime(val) {
+  for (var i = 2; i < Math.sqrt(val+1) | 0; i ++){
+  if (val % i == 0) {
+      return false;
+  }
+  }
+  return true;
+} 
