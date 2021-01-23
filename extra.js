@@ -129,3 +129,24 @@ function isPrime(val) {
   }
   return true;
 } 
+
+// balance point
+function balancePoint(arr) {
+  var lsum = 0;
+  var rsum = 0;
+  for(var i =0; i<arr.length; i++) {
+      rsum += arr[i];
+  }
+  for(var i=0; i<arr.length; i++) {
+      lsum += arr[i];
+      rsum -= arr[i];
+      console.log(arr[i]);
+      console.log(rsum);
+      if(rsum === lsum){
+          return true;
+      } 
+  }
+  return false;
+}
+
+// console.log(balancePoint([1,3,1,2,2]));
