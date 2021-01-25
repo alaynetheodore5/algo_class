@@ -150,3 +150,25 @@ function balancePoint(arr) {
 }
 
 // console.log(balancePoint([1,3,1,2,2]));
+
+//balance index
+function balanceIndex(arr) {
+  var lsum = 0;
+  var rsum = 0;
+  for(var i =0; i<arr.length; i++) {
+      rsum += arr[i];
+  }
+  for(var i=0; i<arr.length; i++) {
+      rsum -= arr[i];
+      // console.log(arr[i]);
+      // console.log(rsum);
+      if(rsum === lsum){
+          return i;
+      } 
+      lsum += arr[i];
+  }
+  return -1;
+}
+
+console.log(balanceIndex([1,3,1,2]));
+
