@@ -172,3 +172,22 @@ function balanceIndex(arr) {
 
 console.log(balanceIndex([1,3,1,2]));
 
+// Flatten a given array, eliminating nested and empty arrays. Do not alter it; return a new array retaining order.
+
+// Given: [1, [2, 3], 4, [ ] ] return [1, 2, 3, 4]
+
+function flatten(arr) {
+  let newArr = [];
+  for(let i=0; i<arr.length; i++) {
+      if(typeof(arr[i]) === "number") {
+          newArr.push(arr[i]);
+      } 
+      else if(Array.isArray(arr[i])) {
+          // newArr = [...newArr, ...arr[i]]
+          for(let j=0; j<arr[i].length; j++) {
+          newArr.push(arr[i][j]);
+          }
+      }
+  }
+  return newArr;
+}
