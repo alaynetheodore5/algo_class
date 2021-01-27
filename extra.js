@@ -191,3 +191,26 @@ function flatten(arr) {
   }
   return newArr;
 }
+
+// flatten with recursion
+function willsFlatten(arr) {
+  var results = [];
+
+  function helper(subarr) {
+      for(let i=0; i<subarr.length; i++) {
+          if(typeof(subarr[i]) === "number") {
+              results.push(subarr[i]);
+          } 
+          else if(Array.isArray(subarr[i])) {
+              // call helper function (recursion)
+              helper(subarr[i]);
+          }
+      }
+  }
+  helper(arr);
+  return results;
+}
+
+// console.log(flatten([1, [2, 3], 4, [ ] ]));
+
+console.log(willsFlatten([1, [2, 3], 4, [ ] ]));
