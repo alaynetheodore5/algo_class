@@ -214,3 +214,24 @@ function willsFlatten(arr) {
 // console.log(flatten([1, [2, 3], 4, [ ] ]));
 
 console.log(willsFlatten([1, [2, 3], 4, [ ] ]));
+
+// Remove array duplicates. Do not alter the original array. Return a new array with the results 'stable' (preserve the original order).
+// Given [1, 2, 1, 3, 4, 2] return [1, 2, 3, 4]
+
+function removeDuplicates(array) {
+  const arr2 = [];
+  for (let i = 0; i < array.length; i++) {
+      let exists = false;
+      for (j = 0; j < arr2.length; j++) {
+      if (array[i] === arr2[j]) {
+          exists = true;
+          break;
+          }
+      }
+      if (!exists) {
+          arr2.push(array[i]);
+          }
+      }
+  return arr2;
+  }
+console.log(removeDuplicates([1,1,2,3,3,4,4,5,5]));
