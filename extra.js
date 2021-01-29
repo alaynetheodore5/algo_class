@@ -235,3 +235,35 @@ function removeDuplicates(array) {
   return arr2;
   }
 console.log(removeDuplicates([1,1,2,3,3,4,4,5,5]));
+
+// Part 2: work 'in place' in the given array. Alter the order if necessary (stability isn't required).
+// Given [1, 2, 1, 3, 4, 2] we might return [1, 2, 4, 3].
+
+function removeDupes(arr) {
+  for(var i=1; i<arr.length; i++) {
+      for(var j=0; j<i; j++) {
+          if(arr[i] === arr[j]) {
+          arr[i] = arr.pop();
+          i--;
+          }  
+      }
+  }
+  return arr;
+}
+
+// Part 3: work 'in place' and make it 'stable'.
+
+function removeDupes(arr) {
+  for(var i=1; i<arr.length; i++) {
+      for(var j=0; j<i; j++) {
+          if(arr[i] === arr[j]) {
+          for(var k=i; k<arr.length-1; k++) {
+              arr[k] = arr[k+1]
+          }
+          arr.pop();
+          i--;
+          }  
+      }
+  }
+  return arr;
+}
