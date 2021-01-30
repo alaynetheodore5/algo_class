@@ -267,3 +267,46 @@ function removeDupes(arr) {
   }
   return arr;
 }
+
+// Given two integers, create rGCF(num1,num2) to recursively determine Greatest Common Factor (the largest integer dividing evenly into both). Greek mathematician Euclid demonstrated these facts:
+
+// gcf(a,b) == a, if a == b;
+// gcf(a,b) == gcf(a-b,b), if a>b;
+// gcf(a,b) == gcf(a,b-a), if b>a.
+// Second: rework facts #2 and #3 to reduce stack consumption and expand rGCF’s reach. You should  be able to compute rGCF(123456,987654).
+
+function rGCF(num1, num2){
+  if(num1 === num2){
+    return num1;
+  } else if(num1 > num2){
+    return rGCF(num1-num2, num2);
+  } else {
+    return rGCF(num1, num2-num1)
+  }
+}
+
+// console.log(rGCF(5,10));
+
+function greatestCF(a, b){
+  if(b<=0){
+    return a;
+  }
+  return greatestCF(b, a%b);
+}
+
+// console.log(greatestCF(5,10));
+
+// The Tarai (Japanese: “to pass around”) function was created to profile recursive performance in various systems and languages. Unlike other functions, numbers don't get particularly large, but the amount of recursion is significant. The tarai function accepts three parameters and is defined as:
+
+// tarai(x,y,z) == y, if x <= y (otherwise see rule #2);
+// tarai(x,y,z) == tarai(tarai(x-1,y,z),tarai(y-1,z,x),tarai(z-1,x,y)).
+// Calling tarai(10,2,9) should return 9 (after recursing 4145 times!).
+function tarai(x, y, z) {
+  if (x > y){
+    return tarai(tarai(x-1,y,z),tarai(y-1,z,x),tarai(z-1,x,y));
+  } else {
+    return y;
+  }   
+}
+
+console.log(tarai(10,2,9));
