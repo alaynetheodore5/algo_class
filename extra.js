@@ -310,3 +310,22 @@ function tarai(x, y, z) {
 }
 
 console.log(tarai(10,2,9));
+
+// isPrime
+// Write a function that given a positive non-zero integer returns whether the value is a prime number (true/false)
+
+// Given: isPrime(1) return false (1 is a special case)
+// Given: isPrime(4) return false (is divisible by 2)
+// Given: isPrime(104729) return true (only divisible by 1 and itself)
+
+function isPrime(val) {
+  for (var i = 2; i < Math.sqrt(val+1) | 0; i ++){
+  if (val % i == 0) {
+      return false;
+  }
+  }
+  return true;
+} 
+
+
+// console.log(isPrime(104729));
