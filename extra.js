@@ -329,3 +329,27 @@ function isPrime(val) {
 
 
 // console.log(isPrime(104729));
+
+// Large Primes
+// Using your isPrime function write a function that takes a number "n" and returns the nth prime number
+
+// Given: findPrime(1) return 2 (2 is the first prime number)
+// Given: findPrime(5) return 11
+// Given: findPrime(10000) return 104729
+
+
+function largePrime(val) {
+  var count = 0;
+  var primenum = 1
+  while (count < val) {
+  primenum ++;
+  if (isPrime(primenum)) {
+      count ++;
+  }
+  
+  
+  }
+  return primenum;
+}
+
+console.log(largePrime(100000));
