@@ -353,3 +353,32 @@ function largePrime(val) {
 }
 
 console.log(largePrime(100000));
+
+//Matrix Search
+
+function matrixSearch(bigArr, smallArr) {
+  var h = bigArr.length-(smallArr.length-1);
+  var w = bigArr[0].length-(smallArr[0].length-1);
+  for(var i=0; i<h; i++) {
+      for(var j=0; j<w; j++) {
+      // console.log(i,j);
+          if(smallArr[0][0] === bigArr[i][j]) {
+          // console.log(bigArr[i][j]);
+              exists = true;
+              for(var m=0; m<smallArr.length; m++) {
+                  for(var n=0; n<smallArr[m].length; n++) {
+                      if(smallArr[m][n] != bigArr[i+m][j+n]) {
+                      exists = false;
+                      }
+                  }
+              }
+              if(exists) {
+                  return true;
+              }
+          }
+      }
+  }
+  return false;
+}
+
+console.log(matrixSearch([[1,2,3],[4,5,6], [7,8,9]], [[2,3], [5,6]]));
