@@ -443,3 +443,27 @@ function tacoTruck(carr){
 }
 
 console.log(tacoTruck( [ [10,0], [-1,-10], [2,4] ] ))
+
+// hexidecimal
+
+function hex2dec(hexstring){
+
+  let summy = 0;
+  let powpow = 0; //# of characters from the right
+
+  for (var i = hexstring.length-1; i >= 2; i--){
+  hexdict = {
+      '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5,
+      '6': 6, '7': 7, '8': 8, '9': 9, 'a': 10, 'b': 11,
+      'c': 12, 'd': 13, 'e': 14, 'f': 15
+  }
+  let numbervalue = hexdict[hexstring[i]];
+  let charval = (16 ** powpow)*numbervalue;
+  summy = summy + charval;
+  powpow++;
+  }
+
+  return summy;
+}
+
+console.log(hex2dec("0x3c"));
