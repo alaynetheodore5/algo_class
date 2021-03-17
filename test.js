@@ -11,3 +11,10 @@ function nthToLast(arr, num){
 
 // console.log(nthToLast([5,2,3,6,4,9,7],3));
 console.log(nthToLast([1,2,3,4,5],-1));
+
+// print 1 - 200
+function oneToOneHundred(){
+    for(i=1; i<=200; i++){
+        console.log(i);
+    }
+}
